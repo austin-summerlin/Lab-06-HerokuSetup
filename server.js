@@ -1,15 +1,7 @@
-import express from 'express';
-import cors from 'cors';
+import app from './lib/app.js';
 
-const app = express();
+const port = process.env.PORT || 8001;
 
-app.use(cors());
-
-app.get('/', (req, res) => {
-  console.log('handling the get request for /');
-  res.send('Hellow World');
-});
-
-app.listen(8001, () => {
-  console.log('App started on port 8001');
+app.listen(port, () => {
+  console.log(`App listening at http://localhost:${port}`);
 });
